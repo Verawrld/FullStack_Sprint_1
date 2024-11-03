@@ -68,4 +68,3 @@ module.exports = {
   generateMenusForAllRestaurants,
   menus,
 };
-s;
