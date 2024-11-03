@@ -5,6 +5,7 @@ const {
   generateRandomMenuItem,
   generateMenu,
   selectRandomCuisine,
+  generateRestaurantReport,
   menus,
 } = require("./utils/restaurantUtils");
 
@@ -20,7 +21,15 @@ app.use(express.static("public"));
  * Renders the homepage that lists cities and restaurant names.
  */
 app.get("/", (request, response) => {
-  response.render("index", { restaurants: Restaurants });
+  // Generate a random menu item for demonstration purposes
+  const randomRestaurant =
+    Restaurants[Math.floor(Math.random() * Restaurants.length)];
+  const randomMenuItem = generateRandomMenuItem(selectRandomCuisine());
+  response.render("index", {
+    restaurants: Restaurants,
+    randomMenuItem,
+    restaurantName: randomRestaurant.name,
+  });
 });
 
 /**
@@ -58,6 +67,16 @@ app.get("/alerts", (request, response) => {
     };
   });
   response.render("alerts", { alerts });
+});
+
+/**
+ * GET /report
+ * Displays a full restaurant report with the selected cuisine and menu.
+ */
+
+app.get("/report", (request, response) => {
+  const report = generateRestaurantReport();
+  response.render("report", { report });
 });
 
 const port = 3000;

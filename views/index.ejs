@@ -7,6 +7,17 @@
   <body>
     <main class="main-content">
       <h1>Restaurant Menus</h1>
+
+      <% if (randomMenuItem) { %>
+      <h2>Random Menu Item</h2>
+      <p><strong>Restaurant:</strong> <%= restaurantName %></p>
+      <p><strong>Item:</strong> <%= randomMenuItem.name %></p>
+      <p><%= randomMenuItem.description %></p>
+      <p>Price: $<%= randomMenuItem.price %></p>
+      <% if (randomMenuItem.isSpecial) { %>
+      <p><em>Special of the Day!</em></p>
+      <% } %> <% } %>
+
       <h2>Please choose your restaurant to get the menu</h2>
       <form action="/restaurant" method="GET">
         <label for="restaurantId">Select a restaurant:</label>
@@ -17,6 +28,10 @@
         </select>
         <button type="submit">Get the menu!</button>
       </form>
+
+      <br />
+
+      <a href="/alerts">View All Restaurants with Special Offers</a>
     </main>
   </body>
 </html>

@@ -38,7 +38,8 @@ function selectRandomCuisine() {
  */
 
 function generateMenu() {
-  const cuisine = selectRandomCuisine(Cuisines);
+  const cuisine = selectRandomCuisine();
+  console.log(`Selected cuisine: ${cuisine}`); // Debugging line
   const itemCount = Math.floor(Math.random() * 6) + 5;
   const items = Array.from({ length: itemCount }, () =>
     generateRandomMenuItem(cuisine)
@@ -46,6 +47,18 @@ function generateMenu() {
   return {
     cuisine,
     items,
+  };
+}
+
+/**
+ * Generates a full restaurant report with the selected cuisine and menu.
+ * @returns {*} An object representing the restaurant's report, including the cuisine type and items.
+ */
+function generateRestaurantReport() {
+  const menu = generateMenu();
+  return {
+    cuisine: menu.cuisine,
+    items: menu.items,
   };
 }
 
@@ -65,6 +78,7 @@ module.exports = {
   generateRandomMenuItem,
   selectRandomCuisine,
   generateMenu,
+  generateRestaurantReport,
   generateMenusForAllRestaurants,
   menus,
 };
