@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.1",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "restaurant-menu-app": "file:"
   }
 }
