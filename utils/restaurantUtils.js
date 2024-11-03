@@ -50,7 +50,22 @@ function generateMenu() {
 }
 
 /**
- * Additional utility functions can be defined here if needed.
+ * Generates menus for all restaurants and stores them in memory.
  */
+function generateMenusForAllRestaurants() {
+  Restaurants.forEach((restaurant) => {
+    menus[restaurant.id] = generateMenu();
+  });
+}
 
-module.exports = { generateRandomMenuItem, selectRandomCuisine, generateMenu };
+// Generate menus when the application starts
+generateMenusForAllRestaurants();
+
+module.exports = {
+  generateRandomMenuItem,
+  selectRandomCuisine,
+  generateMenu,
+  generateMenusForAllRestaurants,
+  menus,
+};
+s;

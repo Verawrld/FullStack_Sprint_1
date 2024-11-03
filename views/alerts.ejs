@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <title>Menu Alerts</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <main class="main-content">
+      <h1>Menu Alerts</h1>
+      <% alerts.forEach(alert => { %>
+      <h2><%= alert.restaurant.name %></h2>
+      <% if (alert.specials.length > 0) { %>
+      <ul>
+        <% alert.specials.forEach(item => { %>
+        <li>
+          <strong><%= item.name %></strong>: <%= item.description %> - $<%=
+          item.price %>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No current alerts.</p>
+      <% } %> <% }) %>
+      <a href="/">Back to Home</a>
+    </main>
+  </body>
+</html>
