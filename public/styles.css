@@ -1,37 +1,73 @@
-/* Base styling, feel free to remove or alter */
-
 body {
-    background: linear-gradient(90deg, rgba(93,142,251,1) 0%, rgba(93,142,251,1) 50%, rgba(0,212,255,1) 100%);
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
+    background: #F5F5DC; /* Light Beige */
+    color: #333333; /* Dark Gray */
     font-family: 'Lato', sans-serif;
-    display: flex;
-    color: #F6F6F6;
+    margin: 0;
+    padding: 0;
 }
+
+.sidebar-banner {
+    width: 200px; /* Adjust the width as needed */
+    height: 100vh; /* Full height */
+    background-image: url(''); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+}
+
 
 .main-content {
     display: flex;
     justify-content: center;
-    flex: 1;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
 }
 
 .main-content h1 {
     font-size: 50px;
+    color: #8B0000; /* Dark Red */
+    margin-bottom: 20px;
 }
 
-.main-content form {
-    font-size: 15px;
+.main-content h2 {
+    font-size: 30px;
+    color: #006400; /* Dark Green */
+    margin-bottom: 20px;
 }
 
-.main-content form button {
-    border: none;
-    background: #F6F6F6;
-    mix-blend-mode: screen;
-    padding: 5px;
-    border-radius: 5px;
-    margin-left: 5px;
-    cursor: pointer;
+.main-content ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.main-content li {
+    font-size: 18px;
+    color: #4B2E39; /* Dark Brown */
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #8B0000; /* Dark Red */
+}
+
+.main-content li strong {
+    font-size: 20px;
+    color: #333333; /* Dark Gray */
+}
+
+.main-content li span {
+    color: #FF7F50; /* Coral */
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+a {
+    color: #4169E1; /* Royal Blue */
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
 }

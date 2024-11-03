@@ -39,14 +39,13 @@ app.get("/", (request, response) => {
  */
 app.get("/restaurant", (request, response) => {
   const restaurantId = request.query.restaurantId;
-  const menu = menus[restaurantId];
-  if (!menu) {
-    return response
-      .status(404)
-      .send("Menu not found for the selected restaurant.");
+  const restaurant = Restaurants.find((r) => r.id === restaurantId);
+  if (!restaurant) {
+    return response.status(404).send("Restaurant not found.");
   }
+  const menu = generateMenu();
   response.render("restaurant", {
-    restaurant: Restaurants.find((r) => r.id === restaurantId),
+    restaurant,
     menu,
   });
 });
